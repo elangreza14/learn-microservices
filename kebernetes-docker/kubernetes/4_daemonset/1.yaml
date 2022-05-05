@@ -1,0 +1,23 @@
+# to submit run -> kubectl create -f 1.yaml
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon-nginx
+  labels:
+    name: daemon-nginx
+spec:
+  selector:
+    matchLabels:
+      name: daemon-nginx
+  template:
+    metadata:
+      name:  daemon-nginx
+      labels:
+        name: daemon-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80

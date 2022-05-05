@@ -1,0 +1,7 @@
+// get status of docker
+sudo systemctl status docker
+
+
+// get enable of docker
+sudo systemctl enable --now docker
+

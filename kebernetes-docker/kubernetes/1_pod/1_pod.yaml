@@ -1,0 +1,14 @@
+# to submit run -> kubectl create -f 1_pod.yaml 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+
+

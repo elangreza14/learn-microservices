@@ -1,0 +1,19 @@
+# to submit run -> kubectl create -f 3_pod_label_annotation.yaml
+# to read anotation submit run -> kubectl describe pod nginx-with-annotation
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-annotation
+  labels:
+    team: rnd
+    version: 1.0.5
+    environtment: production
+  annotations:
+    description: ini adalah latihan pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80

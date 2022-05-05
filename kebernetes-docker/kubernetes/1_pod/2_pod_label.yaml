@@ -1,0 +1,19 @@
+# to submit run -> kubectl create -f 2_pod_label.yaml
+# to show label run -> kubectl get pod --show-labels
+# to searching pod run -> kubectl get pod -l team=finance
+# to searching pod run -> kubectl get pod -l '!team'
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-label
+  labels:
+    team: finance
+    version: 1.4.5
+    environtment: production
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
